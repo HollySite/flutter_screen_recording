@@ -18,9 +18,9 @@ public final class GeneratedPluginRegistrant {
   public static void registerWith(@NonNull FlutterEngine flutterEngine) {
     ShimPluginRegistry shimPluginRegistry = new ShimPluginRegistry(flutterEngine);
     try {
-      changjoopark.com.flutter_foreground_plugin.FlutterForegroundPlugin.registerWith(shimPluginRegistry.registrarFor("changjoopark.com.flutter_foreground_plugin.FlutterForegroundPlugin"));
+      flutterEngine.getPlugins().add(new com.pravera.flutter_foreground_task.FlutterForegroundTaskPlugin());
     } catch(Exception e) {
-      Log.e(TAG, "Error registering plugin flutter_foreground_plugin, changjoopark.com.flutter_foreground_plugin.FlutterForegroundPlugin", e);
+      Log.e(TAG, "Error registering plugin flutter_foreground_task, com.pravera.flutter_foreground_task.FlutterForegroundTaskPlugin", e);
     }
     try {
       com.isvisoft.flutter_screen_recording.FlutterScreenRecordingPlugin.registerWith(shimPluginRegistry.registrarFor("com.isvisoft.flutter_screen_recording.FlutterScreenRecordingPlugin"));
@@ -33,9 +33,14 @@ public final class GeneratedPluginRegistrant {
       Log.e(TAG, "Error registering plugin open_file, com.crazecoder.openfile.OpenFilePlugin", e);
     }
     try {
-      flutterEngine.getPlugins().add(new com.baseflow.permissionhandler.PermissionHandlerPlugin());
+      com.baseflow.permissionhandler.PermissionHandlerPlugin.registerWith(shimPluginRegistry.registrarFor("com.baseflow.permissionhandler.PermissionHandlerPlugin"));
     } catch(Exception e) {
       Log.e(TAG, "Error registering plugin permission_handler, com.baseflow.permissionhandler.PermissionHandlerPlugin", e);
+    }
+    try {
+      flutterEngine.getPlugins().add(new io.flutter.plugins.sharedpreferences.SharedPreferencesPlugin());
+    } catch(Exception e) {
+      Log.e(TAG, "Error registering plugin shared_preferences_android, io.flutter.plugins.sharedpreferences.SharedPreferencesPlugin", e);
     }
   }
 }
