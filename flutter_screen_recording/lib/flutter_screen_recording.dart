@@ -1,11 +1,11 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter_foreground_task/flutter_foreground_task.dart';
-import 'package:flutter_screen_recording_platform_interface/flutter_screen_recording_platform_interface.dart';
 import 'dart:async';
 import 'dart:io';
 
+import 'package:flutter_screen_recording/flutter_screen_recording_platform_interface.dart';
+
 class FlutterScreenRecording {
-  static Future<bool> startRecordScreen(String name, {String titleNotification, String messageNotification}) async{
+  static Future<bool> startRecordScreen(String name, {String titleNotification, String messageNotification}) async {
     await _maybeStartFGS(titleNotification, messageNotification);
     final bool start = await FlutterScreenRecordingPlatform.instance.startRecordScreen(name);
     return start;
@@ -19,15 +19,15 @@ class FlutterScreenRecording {
 
   static Future<String> get stopRecordScreen async {
     final String path = await FlutterScreenRecordingPlatform.instance.stopRecordScreen;
-    if (!kIsWeb && Platform.isAndroid) {
+    if (Platform.isAndroid) {
       // await FlutterForegroundPlugin.stopForegroundService();
       FlutterForegroundTask.stopService();
     }
     return path;
   }
 
-  static  _maybeStartFGS(String titleNotification, String messageNotification) async {
-    if (!kIsWeb && Platform.isAndroid) {
+  static _maybeStartFGS(String titleNotification, String messageNotification) async {
+    if (Platform.isAndroid) {
       // await FlutterForegroundPlugin.setServiceMethodInterval(seconds: 5);
       // await FlutterForegroundPlugin.setServiceMethod(globalForegroundService);
       // return await FlutterForegroundPlugin.startForegroundService(

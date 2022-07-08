@@ -14,11 +14,6 @@ dependencies:
     sdk: flutter
 
   flutter_foreground_task: ^3.7.3
-  flutter_screen_recording_platform_interface:
-    git:
-      url: https://github.com/HollySite/flutter_screen_recording
-      ref: a8c19a6797f8c2efadd8b5a519009c674857a6fd
-      path: flutter_screen_recording_platform_interface
 
 dev_dependencies:
   flutter_test:

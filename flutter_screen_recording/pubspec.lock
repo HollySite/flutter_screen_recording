@@ -76,15 +76,6 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.7.3"
-  flutter_screen_recording_platform_interface:
-    dependency: "direct main"
-    description:
-      path: flutter_screen_recording_platform_interface
-      ref: a8c19a6797f8c2efadd8b5a519009c674857a6fd
-      resolved-ref: a8c19a6797f8c2efadd8b5a519009c674857a6fd
-      url: "https://github.com/HollySite/flutter_screen_recording"
-    source: git
-    version: "1.0.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
