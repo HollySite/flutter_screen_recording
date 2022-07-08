@@ -17,7 +17,7 @@ dependencies:
   flutter_screen_recording_platform_interface:
     git:
       url: https://github.com/HollySite/flutter_screen_recording
-      ref: 8ff707fc2de7632bdceb21f081e1ae9de566325c
+      ref: a8c19a6797f8c2efadd8b5a519009c674857a6fd
       path: flutter_screen_recording_platform_interface
 
 dev_dependencies:
