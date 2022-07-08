@@ -80,8 +80,8 @@ packages:
     dependency: "direct main"
     description:
       path: flutter_screen_recording_platform_interface
-      ref: "8ff707fc2de7632bdceb21f081e1ae9de566325c"
-      resolved-ref: "8ff707fc2de7632bdceb21f081e1ae9de566325c"
+      ref: a8c19a6797f8c2efadd8b5a519009c674857a6fd
+      resolved-ref: a8c19a6797f8c2efadd8b5a519009c674857a6fd
       url: "https://github.com/HollySite/flutter_screen_recording"
     source: git
     version: "1.0.0"
