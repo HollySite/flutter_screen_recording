@@ -5,13 +5,13 @@ import 'dart:io';
 import 'package:flutter_screen_recording/flutter_screen_recording_platform_interface.dart';
 
 class FlutterScreenRecording {
-  static Future<bool> startRecordScreen(String name, {String titleNotification, String messageNotification}) async {
+  static Future<bool> startRecordScreen(String name, {String? titleNotification, String? messageNotification}) async {
     await _maybeStartFGS(titleNotification, messageNotification);
     final bool start = await FlutterScreenRecordingPlatform.instance.startRecordScreen(name);
     return start;
   }
 
-  static Future<bool> startRecordScreenAndAudio(String name, {String titleNotification, String messageNotification}) async {
+  static Future<bool> startRecordScreenAndAudio(String name, {String? titleNotification, String? messageNotification}) async {
     await _maybeStartFGS(titleNotification, messageNotification);
     final bool start = await FlutterScreenRecordingPlatform.instance.startRecordScreenAndAudio(name);
     return start;
@@ -26,7 +26,7 @@ class FlutterScreenRecording {
     return path;
   }
 
-  static _maybeStartFGS(String titleNotification, String messageNotification) async {
+  static _maybeStartFGS(String? titleNotification, String? messageNotification) async {
     if (Platform.isAndroid) {
       // await FlutterForegroundPlugin.setServiceMethodInterval(seconds: 5);
       // await FlutterForegroundPlugin.setServiceMethod(globalForegroundService);
@@ -46,7 +46,7 @@ class FlutterScreenRecording {
       await FlutterForegroundTask.init(
         androidNotificationOptions: AndroidNotificationOptions(
           channelId: 'notification_channel_id',
-          channelName: titleNotification,
+          channelName: titleNotification ?? 'default',
           channelDescription: messageNotification,
           channelImportance: NotificationChannelImportance.LOW,
           priority: NotificationPriority.LOW,
