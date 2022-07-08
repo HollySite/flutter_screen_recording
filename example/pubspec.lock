@@ -89,16 +89,7 @@ packages:
       path: "../flutter_screen_recording"
       relative: true
     source: path
-    version: "2.0.5"
-  flutter_screen_recording_platform_interface:
-    dependency: transitive
-    description:
-      path: flutter_screen_recording_platform_interface
-      ref: "8ff707fc2de7632bdceb21f081e1ae9de566325c"
-      resolved-ref: "8ff707fc2de7632bdceb21f081e1ae9de566325c"
-      url: "https://github.com/HollySite/flutter_screen_recording"
-    source: git
-    version: "1.0.0"
+    version: "0.0.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
